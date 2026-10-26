@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Software Engineer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-color: #050505;
+    --surface-color: #121212;
+    --border-color: #2a2a2a;
+    --text-primary: #ededed;
+    --text-secondary: #888888;
+    --accent-color: #0070F3;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    position: relative;
+  }
+
+  .card:hover {
+    border-color: #444;
+    transform: translateY(-2px);
+  }
+
+  .project-card {
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    filter: grayscale(100%) brightness(0.3); 
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card:hover .card-bg {
+    opacity: 1;
+  }
+
+  .col-span-2 {
+    grid-column: span 2;
+  }
+
+  h1, h2, h3 {
+    margin-top: 0;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h1 { font-size: 24px; margin-bottom: 8px; }
+  h3 { font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .highlight {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00e676;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00e676;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+
+  .link {
+    display: inline-block;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .link:hover {
+    border-color: var(--text-primary);
+    color: #fff;
+  }
+
+  .social-list a {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .col-span-2 { grid-column: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bento-grid">
+  <div class="card col-span-2">
+    <div class="status">
+      <div class="dot"></div> System Online
+    </div>
+    <h1>zev1x / zev1x</h1>
+    <p style="color: var(--text-secondary); font-size: 15px; max-width: 400px;">
+      Software Engineer. Фокусируюсь на высоконагруженных системах, алгоритмах и строгой архитектуре.
+    </p>
+    <div class="mono" style="margin-top: 24px;">
+      > Stack: <span class="highlight">C++, Python, React, System Design</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Core Metrics</h3>
+    <div class="mono" style="line-height: 2;">
+      Latency: <span class="highlight">&lt; 1ms</span><br>
+      Uptime:  <span class="highlight">99.99%</span><br>
+      Commits: <span class="highlight">1,204</span>
+    </div>
+  </div>
+
+  <div class="card project-card">
+    <div class="card-bg" style="background-image: url('image_5d9162.jpg');"></div>
+    <h3 style="color: var(--text-primary);">vivian</h3>
+    <p class="mono" style="font-size: 12px; margin-bottom: 12px;">GitHub Repository</p>
+    <p style="font-size: 14px; color: var(--text-secondary);">Многофункциональный Discord-бот. Код, архитектура и релизы.</p>
+    <a href="https://github.com/shyvqqe/vivian" target="_blank" class="link" style="margin-top: 16px; border-bottom: 1px solid var(--border-color);">View Source -></a>
+  </div>
+
+  <div class="card project-card">
+    <div class="card-bg" style="background-image: url('я1.png');"></div>
+    <h3 style="color: var(--text-primary);">elis</h3>
+    <p class="mono" style="font-size: 12px; margin-bottom: 12px;">GitHub Repository</p>
+    <p style="font-size: 14px; color: var(--text-secondary);">Веб-интерфейс и лендинг проекта. Содержит основную информацию.</p>
+    <a href="https://github.com/shyvqqe/elis" target="_blank" class="link" style="margin-top: 16px; border-bottom: 1px solid var(--border-color);">View Source -></a>
+  </div>
+
+  <div class="card">
+    <h3>Network / Links</h3>
+    <div class="mono social-list" style="display: flex; flex-direction: column;">
+      <span>> $ <a href="https://github.com/shyvqqe" target="_blank" class="link">GitHub</a></span>
+      <span>> $ <a href="https://x.com/aeziyaaa" target="_blank" class="link">X</a></span>
+      <span>> $ <a href="https://steamcommunity.com/profiles/76561198764413497" target="_blank" class="link">Steam</a></span>
+      <span>> $ <a href="https://www.twitch.tv/zev1_x" target="_blank" class="link">Twitch</a></span>
+      <span>> $ <a href="https://open.spotify.com/user/31klpiztydcvcvrmlfqnz76p3wwm" target="_blank" class="link">Spotify</a></span>
+      <span>> $ <a href="https://discord.com/users/1515028662452224074" target="_blank" class="link">Discord User</a></span>
+      <span>> $ <a href="https://discord.com/oauth2/authorize?client_id=1553826513474945114" target="_blank" class="link">Discord Bot</a></span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
